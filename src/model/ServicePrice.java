@@ -58,9 +58,13 @@ public class ServicePrice implements ServiceItem{
 
     @Override
     public float getSale(boolean isMember, float parServicePrice) {
-        if ( == ){
-            
-        }
+        double diskon;
+        if (checkMemberStatus(null) == true ){
+            diskon=parServicePrice * 0.1;
+        } else {
+            diskon=0;
+        }        
+        return (float) diskon;
     }
 
     public float getTotalPay(float priceService, float discount){
